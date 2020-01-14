@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        gradle "gradle5.3"
-    }
-
     stages {
         stage('clone') {
             steps {
