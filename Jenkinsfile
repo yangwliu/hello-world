@@ -3,6 +3,7 @@ pipeline {
 
     tools {
         gradle "gradle5.3"
+        docker "docker18.09.4"
     }
 
     stages {
