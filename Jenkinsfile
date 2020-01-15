@@ -3,7 +3,6 @@ pipeline {
 
     tools {
         gradle "gradle5.3"
-        docker "docker18.09.4"
     }
 
     stages {
@@ -27,7 +26,11 @@ pipeline {
 
         stage('Build Image') {
             steps {
-                sh 'docker build -t helloSimple:test .'
+                script{
+                  def dockerPath = tool 'docker'
+                  env.PATH = "${dockerPath}/bin:${env.PATH}"
+                  sh 'docker build -t hello-simple:test .'
+                }
             }
         }
     }
