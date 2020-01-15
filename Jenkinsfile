@@ -27,7 +27,7 @@ pipeline {
         stage('Build Image') {
             steps {
                 script{
-                  def dockerPath = tool 'docker'
+                  def dockerPath = tool 'docker18.09.4'
                   env.PATH = "${dockerPath}/bin:${env.PATH}"
                   sh 'docker build -t hello-simple:test .'
                 }
