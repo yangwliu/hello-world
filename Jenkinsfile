@@ -33,5 +33,11 @@ pipeline {
                 }
             }
         }
+
+        stage('Deploy') {
+            steps {
+              sh 'docker run -p 8081:8080 hello-simple:test'
+            }
+        }
     }
 }
