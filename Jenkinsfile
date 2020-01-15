@@ -23,5 +23,11 @@ pipeline {
                 sh 'gradle build -i'
             }
         }
+
+        stage('Build Image') {
+            steps {
+                sh 'docker build -t helloSimple:test .'
+            }
+        }
     }
 }
