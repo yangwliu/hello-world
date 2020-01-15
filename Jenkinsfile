@@ -17,5 +17,11 @@ pipeline {
                 sh 'gradle test -i'
             }
         }
+
+        stage('Build') {
+            steps {
+                sh 'gradle build -i'
+            }
+        }
     }
 }
