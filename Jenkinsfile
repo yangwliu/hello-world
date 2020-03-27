@@ -4,13 +4,13 @@ pipeline {
     stages {
         stage('clone') {
             steps {
-                sh echo 'clone'
+                echo 'clone'
             }
         }
 
         stage('Unit test') {
             steps {
-                sh echo 'unit test'
+                echo 'unit test'
             }
         }
 
