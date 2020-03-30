@@ -22,7 +22,17 @@ pipeline {
                 echo 'I will always say Hello again!'
             }
             success {
-                build job: 'triggerd'
+                input {
+                                message "Should we continue?"
+                                ok "Yes, we should."
+                                submitter "alice,bob"
+                                parameters {
+                                    string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+                                }
+                            }
+                build job: 'triggerd', parameters: [
+                                string(name: 'param1', value: "value1")
+                                ]
             }
         }
 }
