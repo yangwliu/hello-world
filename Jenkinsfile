@@ -16,6 +16,13 @@ pipeline {
                 echo 'unit test'
             }
         }
-
     }
+    post {
+            always {
+                echo 'I will always say Hello again!'
+            }
+            success {
+                build job: 'triggerd'
+            }
+        }
 }
