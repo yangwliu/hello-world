@@ -14,10 +14,12 @@ pipeline {
                 echo 'unit test'
                 echo 'unit test'
                 echo 'unit test'
-                input {message "Should we continue?" ok "Yes, we should." submitter "alice,bob"}
             }
-
-
+            input {
+                message "Should we continue?"
+                ok "Yes, we should."
+                submitter "alice,bob"
+            }
         }
     }
     post {
