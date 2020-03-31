@@ -22,7 +22,7 @@ pipeline {
             }
             success {
                 echo 'this is success'
-                input parameters:string(name: 'trigger', defaultValue: 'YES', description: 'trigger?')
+                input parameter:string(name: 'trigger', defaultValue: 'YES', description: 'trigger?')
                 build job: 'triggerd'
             }
         }
