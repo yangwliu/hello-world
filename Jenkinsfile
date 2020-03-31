@@ -14,7 +14,10 @@ pipeline {
                 echo 'unit test'
                 echo 'unit test'
                 echo 'unit test'
+
             }
+
+
         }
     }
     post {
@@ -23,18 +26,10 @@ pipeline {
             }
             success {
                 steps {
-
-                    input {
-                           message "Should we continue?"
-                           ok "Yes, we should."
-                           submitter "alice,bob"
-                           parameters {
-                            string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
-                        }
-
+                    echo 'this is success'
                     build job: 'triggerd'
                 }
-                }
+               }
             }
         }
 }
