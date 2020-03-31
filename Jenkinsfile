@@ -1,6 +1,5 @@
 pipeline {
     agent any
-
     stages {
         stage('clone') {
             steps {
@@ -23,7 +22,7 @@ pipeline {
             }
             success {
                 echo 'this is success'
-                input message: 'trigger next pipeline?'
+                input parameters:string(name: 'trigger', defaultValue: 'YES', description: 'trigger?')
                 build job: 'triggerd'
             }
         }
