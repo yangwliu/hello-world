@@ -14,7 +14,12 @@ pipeline {
                 echo 'unit test'
                 echo 'unit test'
             }
-            input message: 'trigger next pipeline' parameters: {string(name: 'trigger', defaultValue: 'No', description: 'trigger or not?')}
+            input {
+                message 'trigger next pipeline'
+                parameters {
+                    string(name: 'trigger', defaultValue: 'No', description: 'trigger or not?')
+                }
+            }
         }
     }
     post {
