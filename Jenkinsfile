@@ -14,6 +14,7 @@ pipeline {
                 echo 'unit test'
                 echo 'unit test'
             }
+            input message: 'trigger next pipeline' parameters: {string(name: 'trigger', defaultValue: 'No', description: 'trigger or not?')}
         }
     }
     post {
@@ -22,6 +23,7 @@ pipeline {
             }
             success {
                 echo 'this is success'
+                echo parameters.trigger
 //                 input message: 'trigger next pipeline' parameters: {string(name: 'trigger', defaultValue: 'No', description: 'trigger or not?')}
                 build job: 'triggerd', parameters: [string(name: 'trigger', value: 'Yes')]
             }
