@@ -15,11 +15,6 @@ pipeline {
                 echo 'unit test'
                 echo 'unit test'
             }
-            input {
-                message "Should we continue?"
-                ok "Yes, we should."
-                submitter "alice,bob"
-            }
         }
     }
     post {
@@ -28,6 +23,7 @@ pipeline {
             }
             success {
                 echo 'this is success'
+                input message: 'trigger next pipeline?'
                 build job: 'triggerd'
             }
         }
