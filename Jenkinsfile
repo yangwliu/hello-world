@@ -29,7 +29,6 @@ pipeline {
                     echo 'this is success'
                     build job: 'triggerd'
                 }
-               }
             }
         }
 }
