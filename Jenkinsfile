@@ -14,6 +14,7 @@ pipeline {
                 echo 'unit test'
                 echo 'unit test'
                 echo 'unit test'
+                gralde clean build
             }
             input {
                 message 'trigger next pipeline'
