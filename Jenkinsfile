@@ -20,6 +20,7 @@ pipeline {
                 echo 'unit test'
                 echo 'unit test'
                 echo 'unit test'
+                echo 'unit test'
             }
             input {
                 message 'trigger next pipeline'
